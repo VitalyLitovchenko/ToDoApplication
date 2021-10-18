@@ -13,14 +13,26 @@
         <action
             android:id="@+id/action_mainListFragment_to_addTaskFragment"
             app:destination="@id/addTaskFragment" />
+        <action
+            android:id="@+id/action_mainListFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
     </fragment>
     <fragment
         android:id="@+id/addTaskFragment"
-        android:name="com.example.todoapp.fragments.AddTaskFragment.AddTaskFragment"
+        android:name="com.example.todoapp.fragments.addTaskFragment.AddTaskFragment"
         android:label="fragment_add_task"
         tools:layout="@layout/fragment_add_task" >
         <action
             android:id="@+id/action_addTaskFragment_to_mainListFragment"
+            app:destination="@id/mainListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.todoapp.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_mainListFragment"
             app:destination="@id/mainListFragment" />
     </fragment>
 </navigation>

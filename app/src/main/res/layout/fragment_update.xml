@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.addTaskFragment.AddTaskFragment"
+    tools:context=".fragments.updateFragment.UpdateFragment"
     android:padding="16dp">
 
 
     <EditText
-        android:id="@+id/etTaskTitle"
+        android:id="@+id/etTaskTitleUpdate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/task_title"
@@ -20,25 +20,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etTaskDescription"
+        android:id="@+id/etTaskDescriptionUpdate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/task_description"
-        app:layout_constraintEnd_toEndOf="@+id/etTaskTitle"
-        app:layout_constraintStart_toStartOf="@+id/etTaskTitle"
-        app:layout_constraintTop_toBottomOf="@+id/etTaskTitle" />
+        app:layout_constraintEnd_toEndOf="@+id/etTaskTitleUpdate"
+        app:layout_constraintStart_toStartOf="@+id/etTaskTitleUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/etTaskTitleUpdate" />
 
     <Button
-        android:id="@+id/btnAddTask"
+        android:id="@+id/btnupdateTask"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/add_task"
-        app:layout_constraintEnd_toEndOf="@+id/etTaskDescription"
-        app:layout_constraintStart_toStartOf="@+id/etTaskDescription"
-        app:layout_constraintTop_toBottomOf="@+id/etTaskDescription" />
+        android:text="@string/update_task"
+        app:layout_constraintEnd_toEndOf="@+id/etTaskDescriptionUpdate"
+        app:layout_constraintStart_toStartOf="@+id/etTaskDescriptionUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/etTaskDescriptionUpdate" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,13 +11,13 @@ interface TaskDao {
     fun readAllData(): LiveData<List<Task>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addNewTask(task: Task)
+    suspend fun addNewTask(task: Task)
 
     @Update
     suspend fun updateTask(task: Task)
 
     @Delete
-    fun deleteCurrentTask(task: Task)
+    suspend fun deleteCurrentTask(task: Task)
 
     @Query("DELETE FROM task_table")
     suspend fun deleteAllTasks()

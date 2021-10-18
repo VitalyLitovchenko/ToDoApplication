@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.todoapp.data.TaskDao
 import com.example.todoapp.model.Task
 
-class TaskInfoRepository(private val taskDao: TaskDao) {
+class TaskRepository(private val taskDao: TaskDao) {
 
     val readAllData: LiveData<List<Task>> = taskDao.readAllData()
 
