@@ -4,22 +4,29 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.todoapp.data.TaskDao
 import com.example.todoapp.data.TaskDatabase
 import com.example.todoapp.model.Task
 import com.example.todoapp.repository.TaskRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class TaskViewModel(application: Application): AndroidViewModel(application) {
+class TaskViewModel(application: Application) : AndroidViewModel(application) {
 
-    val readAllData: LiveData<List<Task>>
-    private val repository: TaskRepository
+    private val taskDao = TaskDatabase.getDataBase(
+        application
+    ).taskDao()
+    private val repository: TaskRepository = TaskRepository(taskDao)
+    val readAllData: LiveData<List<Task>> = repository.readAllData
 
-    init {
-        val taskDao = TaskDatabase.getDataBase(application).taskDao()
-        repository = TaskRepository(taskDao)
-        readAllData = repository.readAllData
-    }
+//    val readAllData: LiveData<List<Task>>
+//    private val repository: TaskRepository
+//
+//    init {
+//        val taskDao = TaskDatabase.getDataBase(application).taskDao()
+//        repository = TaskRepository(taskDao)
+//        readAllData = repository.readAllData
+//    }
 
     fun addNewTask(task: Task){
         viewModelScope.launch(Dispatchers.IO) {

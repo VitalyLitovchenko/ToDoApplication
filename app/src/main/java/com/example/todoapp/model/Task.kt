@@ -9,7 +9,7 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "task_table")
 data class Task(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    var id: Int,
     val title: String,
     val description: String
     ):Parcelable
