@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etTaskTitleUpdate" />
 
     <Button
-        android:id="@+id/btnupdateTask"
+        android:id="@+id/btnUpdateTask"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -39,6 +39,16 @@
         app:layout_constraintEnd_toEndOf="@+id/etTaskDescriptionUpdate"
         app:layout_constraintStart_toStartOf="@+id/etTaskDescriptionUpdate"
         app:layout_constraintTop_toBottomOf="@+id/etTaskDescriptionUpdate" />
+
+    <Button
+        android:id="@+id/btnDeleteTask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/delete"
+        app:layout_constraintEnd_toEndOf="@+id/btnUpdateTask"
+        app:layout_constraintStart_toStartOf="@+id/btnUpdateTask"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateTask" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

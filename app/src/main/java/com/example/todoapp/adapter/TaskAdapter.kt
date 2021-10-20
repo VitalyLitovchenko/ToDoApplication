@@ -31,7 +31,7 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         holder.taskDescription.text = currentItem.description
 
         holder.linearLayout.setOnClickListener {
-            val action = MainListFragmentDirections.actionMainListFragmentToUpdateFragment()
+            val action = MainListFragmentDirections.actionMainListFragmentToUpdateFragment(currentItem)
             holder.itemView.findNavController().navigate(action)
         }
     }

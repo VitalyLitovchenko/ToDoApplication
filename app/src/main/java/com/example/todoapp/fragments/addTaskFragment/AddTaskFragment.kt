@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.todoapp.R
@@ -21,7 +22,9 @@ class AddTaskFragment : Fragment() {
     private var _binding: FragmentAddTaskBinding? = null
     private val binding get()=_binding!!
 
-    private lateinit var mTaskViewModel: TaskViewModel
+//    private lateinit var mTaskViewModel: TaskViewModel
+
+    private val mTaskViewModel: TaskViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,11 +37,17 @@ class AddTaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mTaskViewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
+//        mTaskViewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
+
 
         binding.btnAddTask.setOnClickListener {
             insertDataToDatabase()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     private fun insertDataToDatabase() {
@@ -59,11 +68,6 @@ class AddTaskFragment : Fragment() {
 
     private fun inputCheck(taskTitle: String, taskDescription: String): Boolean{
         return !(TextUtils.isEmpty(taskTitle) && TextUtils.isEmpty(taskDescription))
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
 }
