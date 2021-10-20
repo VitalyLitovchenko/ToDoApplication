@@ -56,17 +56,6 @@ class UpdateFragment : Fragment() {
         _binding = null
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.delete_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menuDelete){
-            deleteCurrentTask()
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
 
     private fun updateTask(){
         val taskTitle = binding.etTaskTitleUpdate.text.toString()
